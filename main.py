@@ -7,7 +7,7 @@ try:
     from ics import Calendar
 except ImportError:
     Calendar = None
-    print("⚠️ The 'ics' package is not installed. Install with: pip install ics")
+    print("The 'ics' package is not installed. Install with: pip install ics")
 
 
 SAVE_FILE = "planner_data.json"
@@ -53,7 +53,7 @@ class PlannerApp:
 
         tk.Button(root, text="Add Meeting", command=self.add_meeting).grid(row=7, column=1, pady=5)
 
-        # 🔹 NEW: Delete Meeting button
+        # Delete Meeting button
         tk.Button(root, text="Delete Meeting", command=self.delete_meeting).grid(row=8, column=1, pady=5)
 
         # === IMPORT SECTION ===
@@ -130,7 +130,7 @@ class PlannerApp:
             meeting = f"With {who} on {when} via {how}"
             self.meeting_listbox.insert(tk.END, meeting)
 
-    # 🔹 NEW: Delete meeting method
+    # Delete meeting method
     def delete_meeting(self):
         selection = self.meeting_listbox.curselection()
         if not selection:
